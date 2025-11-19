@@ -105,123 +105,171 @@ CREATE TABLE Table_Name (
 
 **Question 1**
 --
--- Paste Question 1 here
-
+Create a new table named item with the following specifications and constraints: item_id as TEXT and as primary key. item_desc as TEXT. rate as INTEGER. icom_id as TEXT with a length of 4. icom_id is a foreign key referencing com_id in the company table. The foreign key should set NULL on updates and deletes. item_desc and rate should not accept NULL.
 ```sql
--- Paste your SQL code below for Question 1
+CREATE TABLE item(
+    item_id TEXT PRIMARY KEY,
+    item_desc TEXT NOT NULL,
+    rate INTEGER NOT NULL,
+    icom_id TEXT CHECK(LENGTH(icom_id)=4),
+    FOREIGN KEY (icom_id) REFERENCES company(com_id)
+    ON DELETE SET NULL 
+    ON UPDATE SET NULL
+);
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="820" height="229" alt="image" src="https://github.com/user-attachments/assets/866b8cd9-8726-4edd-af37-e08cfdc4e793" />
 
 **Question 2**
 ---
--- Paste Question 2 here
+Insert all products from Discontinued_products into Products. Table attributes are ProductID, ProductName, Price, Stock
+
 
 ```sql
--- Paste your SQL code below for Question 2
+insert into Products(ProductID, ProductName, Price, Stock)
+SELECT * FROM Discontinued_products;
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="823" height="176" alt="image" src="https://github.com/user-attachments/assets/3a6c5fc9-b2b9-4425-a6dc-31c01b8b7533" />
 
 **Question 3**
 ---
--- Paste Question 3 here
+Create a table named Employees with the following constraints:
 
+EmployeeID should be the primary key. FirstName and LastName should be NOT NULL. Email should be unique. Salary should be greater than 0. DepartmentID should be a foreign key referencing the Departments table.
 ```sql
--- Paste your SQL code below for Question 3
+create table Employees(
+EmployeeID int primary key,
+FirstName text not null,
+LastName text not null,
+Salary int check(salary>0),
+Email text unique,
+DepartmentID int,
+foreign key (DepartmentID) references Departments(DepartmentID)
+);
 ```
 
 **Output:**
 
-![Output3](output.png)
+<img width="815" height="336" alt="image" src="https://github.com/user-attachments/assets/918991a5-1239-442b-aec4-7dc4ffe5920a" />
 
 **Question 4**
 ---
--- Paste Question 4 here
+Insert a student with RollNo 201, Name David Lee, Gender M, Subject Physics, and MARKS 92 into the Student_details table
+
 
 ```sql
--- Paste your SQL code below for Question 4
+insert into Student_details(RollNo,Name,Gender,Subject,MARKS)values(201,'David Lee','M','Physics',92)
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="815" height="146" alt="image" src="https://github.com/user-attachments/assets/5ee6c50d-5089-4fd4-82a4-a384ef525536" />
 
 **Question 5**
 ---
--- Paste Question 5 here
+Create a table named Members with the following columns:
 
+MemberID as INTEGER MemberName as TEXT JoinDate as DATE
 ```sql
--- Paste your SQL code below for Question 5
+create table Members(
+MemberID INTEGER,
+MemberName TEXT,
+JoinDate DATE);
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="817" height="252" alt="image" src="https://github.com/user-attachments/assets/c41af01a-f87f-4fb6-9d81-5a6fc1a3fb59" />
 
 **Question 6**
 ---
--- Paste Question 6 here
+Write an SQL query to change the name of the column id to employee_id in the table employee.
+
 
 ```sql
--- Paste your SQL code below for Question 6
+alter table employee  rename id to employee_id;
 ```
 
 **Output:**
 
-![Output6](output.png)
+<img width="821" height="175" alt="image" src="https://github.com/user-attachments/assets/9ecc7032-2e50-41ff-9aae-96f2d825bdfb" />
 
 **Question 7**
 ---
--- Paste Question 7 here
-
+Create a table named Attendance with the following constraints: AttendanceID as INTEGER should be the primary key. EmployeeID as INTEGER should be a foreign key referencing Employees(EmployeeID). AttendanceDate as DATE. Status as TEXT should be one of 'Present', 'Absent', 'Leave'.
 ```sql
--- Paste your SQL code below for Question 7
+create table Attendance(
+    AttendanceID INTEGER PRIMARY KEY,
+    EmployeeID INTEGER,
+    AttendanceDate DATE,
+    Status TEXT ,
+    foreign key (EmployeeID) references  Employees(EmployeeID),
+    CHECK(Status IN ('Present','Absent','Leave'))
+);
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="817" height="182" alt="image" src="https://github.com/user-attachments/assets/65a5a176-ffb6-48f1-b0f1-bbfdae5e0205" />
 
 **Question 8**
 ---
--- Paste Question 8 here
-
+Insert the following products into the Products table: Name Category Price Stock
+---------- ----------- ---------- ----------
+Smartphone Electronics 800 150
+Headphones Accessories 200 300
 ```sql
--- Paste your SQL code below for Question 8
+insert into Products(Name,Category,Price,Stock)values('Smartphone','Electronics',800,150),('Headphones','Accessories',200,300);
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="815" height="236" alt="image" src="https://github.com/user-attachments/assets/bf4c4d0e-cfe5-47c3-8c60-904565e787a7" />
 
 **Question 9**
 ---
--- Paste Question 9 here
+Write a SQL query to add birth_date attribute as timestamp (datatype) in the table customer
 
+Sample table: customer
+
+customer_id | cust_name | city | grade | salesman_id
+-------------+----------------+------------+-------+-------------
+3002 | Nick Rimando | New York | 100 | 5001
+3007 | Brad Davis | New York | 200 | 5001
+3005 | Graham Zusi | California | 200 | 5002
 ```sql
--- Paste your SQL code below for Question 9
+alter table customer add birth_date timestamp;
 ```
 
 **Output:**
 
-![Output9](output.png)
+<img width="817" height="243" alt="image" src="https://github.com/user-attachments/assets/8459ff85-21d9-40b5-8248-f332bf756a1a" />
 
 **Question 10**
 ---
--- Paste Question 10 here
+Write a SQL query to Add a new column Country as text in the Student_details table.
 
+Sample table: Student_details
+
+cid name type notnull dflt_value pk
+--------------- --------------- ----- ---------- ---------- ----------
+0 RollNo int 0 1
+1 Name VARCH 1 0
+2 Gender TEXT 1 0
+3 Subject VARCH 0 0
+4 MARKS INT ( 0 0
 ```sql
--- Paste your SQL code below for Question 10
+alter table Student_details add Country TEXT;
 ```
 
 **Output:**
 
-![Output10](output.png)
+<img width="821" height="232" alt="image" src="https://github.com/user-attachments/assets/73e1146f-3ae5-4736-b441-1269bef89d3a" />
 
 
 ## RESULT
