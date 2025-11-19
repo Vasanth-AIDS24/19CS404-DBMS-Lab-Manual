@@ -252,6 +252,7 @@ alter table customer add birth_date timestamp;
 
 **Question 10**
 ---
+```
 Write a SQL query to Add a new column Country as text in the Student_details table.
 
 Sample table: Student_details
@@ -263,6 +264,7 @@ cid name type notnull dflt_value pk
 2 Gender TEXT 1 0
 3 Subject VARCH 0 0
 4 MARKS INT ( 0 0
+```
 ```sql
 alter table Student_details add Country TEXT;
 ```
