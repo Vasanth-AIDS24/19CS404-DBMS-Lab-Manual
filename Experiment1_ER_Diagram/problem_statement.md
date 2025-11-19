@@ -26,25 +26,18 @@ FlexiFit Gym wants a database to manage its members, trainers, and fitness progr
 <img width="732" height="805" alt="image" src="https://github.com/user-attachments/assets/5327ea13-0a2c-4cf6-af86-837c3e5b5f4e" />
 
 ### Entities and Attributes
-Entity	Attributes (PK, FK)	Notes
-Member	MemberID ,Membership	Store member details
-Trainer	TrainerID,Name,Email,PhoneNumber	Store Trainer details
-Program	ProgramID,Cost	Programs like Zumbz/yoga
-Session	SessionID,SessionDate	Tracks attendance
-Payment	PaymentID,Amount	Tracks payments by members
+<img width="1142" height="277" alt="image" src="https://github.com/user-attachments/assets/525666d7-62b1-4c99-ae6d-f45145255b5f" />
+      
 ### Relationships and Constraints
+<img width="1261" height="348" alt="image" src="https://github.com/user-attachments/assets/eae79a77-e7ff-4958-a3d0-67d7cf07282d" />
 
-| Relationship | Cardinality | Participation | Notes |
-|--------------|------------|---------------|-------|
-|              |            |               |       |
-|              |            |               |       |
-|              |            |               |       |
 
 ### Assumptions
-- 
-- 
-- 
-
+```
+-Role-Based Access: Users have different roles (e.g., admin, trainer, member), with permissions assigned based on their role.
+-Trainer-Managed Programs: Trainers manage fitness programs, and members can join multiple fitness types, each guided by a trainer.
+-Flexible Member Participation: Members can participate in multiple fitness programs, with flexibility in the types and number of programs they join.
+```
 ---
 
 # Scenario B: City Library Event & Book Lending System
@@ -66,26 +59,19 @@ The Central Library wants to manage book lending and cultural events.
 
 ### Entities and Attributes
 
-| Entity | Attributes (PK, FK) | Notes |
-|--------|--------------------|-------|
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
+<img width="1261" height="280" alt="image" src="https://github.com/user-attachments/assets/07602180-5858-439f-87c0-cf3900c49558" />
+
 
 ### Relationships and Constraints
 
-| Relationship | Cardinality | Participation | Notes |
-|--------------|------------|---------------|-------|
-|              |            |               |       |
-|              |            |               |       |
-|              |            |               |       |
+<img width="1267" height="352" alt="image" src="https://github.com/user-attachments/assets/64f402ae-457d-4d03-8684-4df5075baf45" />
 
 ### Assumptions
-- 
-- 
-- 
+```
+-Member-Book Loan System: A Member can borrow multiple Books with a Loan representing each borrowing transaction, which includes the loan and return dates.
+-Event Participation: Members can register for multiple Events, and each Event can have multiple Members attending, with optional speakers.
+-Speaker-Event Association: Events may feature one or more Speakers, and a Speaker can be involved in multiple Events.
+```
 
 ---
 
@@ -108,27 +94,20 @@ A popular restaurant wants to manage reservations, orders, and billing.
 
 ### Entities and Attributes
 
-| Entity | Attributes (PK, FK) | Notes |
-|--------|--------------------|-------|
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
+<img width="1021" height="416" alt="image" src="https://github.com/user-attachments/assets/a84bb5dc-5846-4e81-b6a4-903c61768b9f" />
+
 
 ### Relationships and Constraints
 
-| Relationship | Cardinality | Participation | Notes |
-|--------------|------------|---------------|-------|
-|              |            |               |       |
-|              |            |               |       |
-|              |            |               |       |
+<img width="915" height="322" alt="image" src="https://github.com/user-attachments/assets/93c1c974-748c-4f49-bd20-67228a44ece9" />
+
 
 ### Assumptions
-- 
-- 
-- 
-
+```
+-Each reservation occupies one table only.
+-Bills always generated per reservation.
+-Service charges fixed percentage (not modeled).
+```
 ---
 
 ## Instructions for Students
