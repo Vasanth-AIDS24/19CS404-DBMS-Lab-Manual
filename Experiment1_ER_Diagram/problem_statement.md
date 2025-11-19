@@ -66,7 +66,7 @@ The Central Library wants to manage book lending and cultural events.
 
 ### ER Diagram:
 *Paste or attach your diagram here*  
-![ER Diagram](er_diagram_library.png)
+<img width="1280" height="652" alt="image" src="https://github.com/user-attachments/assets/fe211126-079d-4018-8703-3e9d102a361d" />
 
 ### Entities and Attributes
 
@@ -113,7 +113,7 @@ A popular restaurant wants to manage reservations, orders, and billing.
 
 ### ER Diagram:
 *Paste or attach your diagram here*  
-![ER Diagram](er_diagram_restaurant.png)
+<img width="1280" height="853" alt="image" src="https://github.com/user-attachments/assets/9862c828-3536-4cb6-b731-3789a0c77449" />
 
 ### Entities and Attributes
 
